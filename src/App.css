@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+.tab-style{
+  background: #F8F8F8;
+  border: i px solid black;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

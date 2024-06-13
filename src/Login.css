@@ -44,3 +44,23 @@
 .signup-form button:hover {
     background-color: #0056b3; 
 }
+.password-input {
+    position: relative;
+    margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+
+.password-input .password-toggle {
+    position: absolute;
+    top: 34%;
+    right: 15px; /* Adjust right position as needed */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+/* Additional styles for FontAwesome icons */
+.password-toggle svg {
+    font-size: 18px;
+}
+
