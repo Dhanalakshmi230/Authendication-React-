@@ -42,34 +42,10 @@ const UserTable = () => {
     fetchUserData();
   }, []);
 
-  const handleEdit = async () => {
-    if (userData && userData.Details && userData.Details.username) {
-      const username = userData.Details.username;
-
-      try {
-        const token = localStorage.getItem('token');
-
-        if (!token) {
-          setError({ error: { reason: 'Token not found in local storage' } });
-          return;
-        }
-
-        const response = await axios.get(`http://localhost:8080/api/user/getUserByName/${username}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-
-        const user = response.data;
-        navigate(`/edit/${username}`, { state: { userData: user } }); // Pass userData to the edit route
-      } catch (error) {
-        console.error('Error fetching user data for edit:', error);
-        if (error.response) {
-          setError(error.response.data);
-        } else {
-          setError(error.message);
-        }
-      }
+  const handleEdit = () => {
+    if (userData && userData.Details && userData.Details.userName) {
+      const username = userData.Details.userName;
+      navigate(`/edit/${username}`);
     }
   };
 

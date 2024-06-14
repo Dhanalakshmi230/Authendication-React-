@@ -1,8 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-import SignUp from './SignUp';
-import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Login';
+import SignUp from './SignUp';
 import UserTable from './UserTable';
 import AdminTable from './AdminTable';
 import UpdateUser from './UpdateUser';
@@ -10,17 +9,16 @@ import UpdateUser from './UpdateUser';
 function App() {
   return (
     <div className="App">
-    <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-          
-      <Route index element={<Login />} />
-          <Route path="Signup" element={<SignUp />} />
+          <Route path="/" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
           <Route path="usertable" element={<UserTable />} />
           <Route path="admintable" element={<AdminTable />} />
-          <Route path="updatuser" element={<UpdateUser />}/>
+          <Route path="edit/:username" element={<UpdateUser />} />
         </Routes>
       </BrowserRouter>
-      </div>
+    </div>
   );
 }
 
